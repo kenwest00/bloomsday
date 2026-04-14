@@ -3,3 +3,53 @@
 > next build
 
    Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+ ⚠ See more info here https://nextjs.org/docs/messages/static-page-generation-timeout
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+ ⚠ See more info here https://nextjs.org/docs/messages/static-page-generation-timeout
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+ ⚠ Restarted collecting page data for undefined because it took more than 60 seconds
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+Static worker unexpectedly exited with code: null and signal: SIGTERM
+unhandledRejection Error: Collecting page data for undefined is still timing out after 2 attempts. See more info here https://nextjs.org/docs/messages/page-data-collection-timeout
+    at onRestart (/Users/ausar/Library/CloudStorage/OneDrive-Personal/KEN/business/cleargov.io/florida_data/bloomsday-website/node_modules/next/dist/build/index.js:744:39)
+    at Worker.hasCustomGetInitialProps (/Users/ausar/Library/CloudStorage/OneDrive-Personal/KEN/business/cleargov.io/florida_data/bloomsday-website/node_modules/next/dist/lib/worker.js:95:40)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
