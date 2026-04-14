@@ -106,35 +106,33 @@ export default function Blog() {
                    transition={{ duration: 0.2, ease: "easeInOut" }}
                    className="h-full"
                  >
-                   <Link href={article.link} className="group block relative h-full bg-white rounded-[2px] overflow-hidden"
-                         style={{ 
-                           border: "1px solid var(--card-border)", 
-                         }}>
-                     {/* Dynamic Left Border & Expanding Interaction via nested div */}
+                   <Link href={article.link} className="group block relative h-full bg-white rounded-t-[2px] rounded-b-[2px] overflow-hidden hover-shadow flex flex-col transition-colors duration-200"
+                         style={{ border: "none" }}>
+                     
+                     {/* Color Header Block */}
                      <div 
-                       className="absolute inset-y-0 left-0 transition-all duration-200 ease-in-out group-hover:w-[6px] w-[4px]"
+                       className="relative w-full h-[72px] md:h-[88px] flex items-center justify-between px-[20px] transition-all duration-200 ease-in-out group-hover:brightness-[1.12] shrink-0 rounded-t-[2px] overflow-hidden"
                        style={{ backgroundColor: accentColor }}
-                     />
-
-                     {/* Ghost Dispatch Number */}
-                     <div 
-                       className="absolute top-4 right-6 text-[48px] font-[800] leading-none pointer-events-none transition-opacity duration-200"
-                       style={{ color: accentColor, opacity: 0.08 }}
                      >
-                       {article.num}
+                       {/* Category Tag inside Header */}
+                       <div 
+                         className="font-mono text-[11px] uppercase text-white z-10"
+                         style={{ letterSpacing: "0.08em", fontWeight: 600 }}
+                       >
+                         [ {article.category} ]
+                       </div>
+
+                       {/* Dispatch Number inside Header */}
+                       <div 
+                         className="font-sans text-[44px] md:text-[56px] font-[800] text-white opacity-30 leading-none z-10 select-none pb-1"
+                       >
+                         {article.num}
+                       </div>
                      </div>
 
-                     {/* Card Content Area - extra left padding for border inner seat */}
-                     <div className="pt-[28px] pr-[28px] pb-[24px] pl-[32px] flex flex-col justify-between h-full group-hover:bg-[#FAFAF8] transition-colors duration-200 hover-shadow">
+                     {/* Card Content Area - reduced top padding, removed extra left padding */}
+                     <div className="pt-[20px] pr-[28px] pb-[24px] pl-[28px] flex flex-col justify-between h-full group-hover:bg-[#FAFAF8] transition-colors duration-200 flex-grow">
                        <div>
-                         {/* Category Tag */}
-                         <div 
-                           className="font-mono text-[11px] uppercase tracking-widest font-bold mb-4"
-                           style={{ color: accentColor }}
-                         >
-                           [ {article.category} ]
-                         </div>
-                         
                          {/* Title */}
                          <h2 className="font-sans text-[22px] md:text-[24px] font-bold uppercase tracking-tight mb-4" style={{ color: "#1A1A2D" }}>
                            {article.title}
@@ -159,7 +157,6 @@ export default function Blog() {
                          </div>
                        </div>
                      </div>
-                     
 
                    </Link>
                  </motion.div>
