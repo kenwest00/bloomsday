@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { Check, Minus } from "lucide-react";
 import { useState } from "react";
 
 const fadeInUP = {
@@ -59,7 +59,33 @@ export default function Accelerator() {
         </motion.div>
       </section>
 
-      {/* 2. WARNING / NOT A COURSE */}
+      {/* 1.5 YOUR GUIDE SECTION (TASK 04) */}
+      <section className="py-20 px-6 lg:px-12 border-t border-white/10 text-center max-w-4xl mx-auto">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUP}>
+          <div className="font-mono text-xs text-signal-orange tracking-widest uppercase font-bold mb-10">
+            YOUR GUIDE FOR SIX WEEKS
+          </div>
+          
+          <div className="w-[180px] h-[180px] rounded-full mx-auto bg-white/5 border border-white/20 mb-8 flex items-center justify-center relative overflow-hidden">
+            {/* Image placeholder - await actual upload */}
+            <div className="font-mono text-[10px] text-white/40 uppercase text-center absolute">
+              [ KEN WEST<br/>PHOTO ]
+            </div>
+          </div>
+          
+          <h3 className="font-sans text-xl md:text-2xl font-bold uppercase tracking-tight text-white mb-2">
+            Ken West
+          </h3>
+          <p className="font-serif italic text-white/70 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-8">
+            Founder, Bloomsday  &middot;  20+ years building digital products for Apple, Google, Home Depot, AT&amp;T, PepsiCo, and others  &middot;  Author, The Beauty of Everyday Thangs
+          </p>
+          <div className="font-serif text-xl md:text-2xl text-white/90 leading-relaxed border-t border-white/10 pt-8 mt-4 mx-auto max-w-3xl">
+            &quot;I built the Accelerator because senior professionals don&apos;t need more information. They need a deadline, a framework, and someone in the room who has done this before.&quot;
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 2. WARNING / NOT A COURSE (TASK 05: RESTORE COPY) */}
       <section className="py-20 px-6 lg:px-12 bg-signal-orange text-absolute-black border-y border-absolute-black/10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUP}>
@@ -67,7 +93,7 @@ export default function Accelerator() {
               THIS IS NOT A COURSE. IT IS A BUILD.
             </h2>
             <p className="font-serif text-2xl leading-relaxed">
-              Every week, your cohort meets live. Every week, you produce something. By week six, you have a firm product concept, segment-specific customer strategies, and clear direction on your next move. The Accelerator is structured around accountability, not information. You do not need more to read. You need a deadline and a room full of people who will hold you to it.
+              Every week, your cohort meets live. Every week, you produce something. By week six, you have a launched product and your first customer. The Accelerator is structured around accountability, not information. You do not need more to read. You need a deadline and a room full of people who will hold you to it.
             </p>
           </motion.div>
         </div>
@@ -85,7 +111,6 @@ export default function Accelerator() {
             </p>
           </motion.div>
 
-          {/* Countdown timer mockup */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUP} className="flex justify-center mb-16">
             <div className="flex gap-4 md:gap-8 font-mono text-center">
               <div>
@@ -105,7 +130,6 @@ export default function Accelerator() {
             </div>
           </motion.div>
 
-          {/* Cohort Table */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUP}>
             <div className="overflow-x-auto border border-absolute-black/10">
               <table className="w-full text-left font-sans">
@@ -207,18 +231,33 @@ export default function Accelerator() {
               IS THE ACCELERATOR RIGHT FOR YOU?
             </h2>
             <ul className="space-y-4 font-serif text-lg leading-relaxed">
-              <li className="flex items-start gap-3"><div className="w-2 h-2 bg-signal-orange rounded-full mt-2shrink-0 mt-2"></div> Have 10 or more years of deep domain expertise in any field</li>
-              <li className="flex items-start gap-3"><div className="w-2 h-2 bg-absolute-black rounded-full mt-2shrink-0 mt-2"></div> Are serious about launching in a defined, compressed timeframe</li>
-              <li className="flex items-start gap-3"><div className="w-2 h-2 bg-absolute-black rounded-full mt-2shrink-0 mt-2"></div> Respond well to accountability, deadlines, and peer pressure</li>
-              <li className="flex items-start gap-3"><div className="w-2 h-2 bg-absolute-black rounded-full mt-2shrink-0 mt-2"></div> Are prepared to invest 5 to 8 hours per week for six weeks</li>
-              <li className="flex items-start gap-3"><div className="w-2 h-2 bg-absolute-black rounded-full mt-2shrink-0 mt-2"></div> Are not looking for more information — you are looking for a deadline and a framework</li>
+              <li className="flex items-start gap-3"><div className="w-2 h-2 bg-signal-orange rounded-full shrink-0 mt-2"></div> Have 10 or more years of deep domain expertise in any field</li>
+              <li className="flex items-start gap-3"><div className="w-2 h-2 bg-absolute-black rounded-full shrink-0 mt-2"></div> Are serious about launching in a defined, compressed timeframe</li>
+              <li className="flex items-start gap-3"><div className="w-2 h-2 bg-absolute-black rounded-full shrink-0 mt-2"></div> Respond well to accountability, deadlines, and peer pressure</li>
+              <li className="flex items-start gap-3"><div className="w-2 h-2 bg-absolute-black rounded-full shrink-0 mt-2"></div> Are prepared to invest 5 to 8 hours per week for six weeks</li>
+              <li className="flex items-start gap-3"><div className="w-2 h-2 bg-absolute-black rounded-full shrink-0 mt-2"></div> Are not looking for more information — you are looking for a deadline and a framework</li>
             </ul>
           </motion.div>
         </div>
       </section>
 
+      {/* 5.5 STUDENT OUTCOME STORY (TASK 09) */}
+      <section className="py-24 px-6 lg:px-12 bg-off-black border-y border-white/20">
+        <div className="max-w-4xl mx-auto border-l-4 border-[var(--category-launch)] pl-8 py-2">
+          <div className="font-mono text-[var(--category-launch)] text-sm tracking-widest uppercase font-bold mb-6">
+            [ WHAT AN ACCELERATOR BUILD LOOKS LIKE ]
+          </div>
+          <p className="font-serif text-xl md:text-2xl text-white/90 leading-relaxed italic mb-8">
+            &quot;Adriana V., an immigration attorney with 14 years in practice, joined the Accelerator with an idea but no product. By week four she had a live H-1B visa prep course for $249. By week six she had 28 paying customers. It now generates $4,000 to $6,000 a month — passively. The course took six weeks to build and will run for years.&quot;
+          </p>
+          <div className="font-mono text-xs uppercase tracking-widest text-white/50">
+            — Built during the Bloomsday Accelerator, Cohort 01
+          </div>
+        </div>
+      </section>
+
       {/* 6. APPLICATION FORM SECTION */}
-      <section id="apply" className="py-32 px-6 lg:px-12 bg-off-black relative">
+      <section id="apply" className="py-32 px-6 lg:px-12 bg-absolute-black relative">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">
@@ -229,7 +268,7 @@ export default function Accelerator() {
             </p>
           </div>
 
-          <div className="bg-absolute-black border border-white/20 p-8 md:p-12 shadow-2xl">
+          <div className="bg-absolute-black border border-white/20 p-8 md:p-12 shadow-2xl mb-24">
             {submitted ? (
               <div className="text-center py-20">
                 <div className="w-20 h-20 bg-signal-orange text-absolute-black rounded-full flex items-center justify-center mx-auto mb-8">
@@ -296,20 +335,51 @@ export default function Accelerator() {
                 <button type="submit" className="w-full bg-signal-orange text-stark-white font-mono text-lg font-bold uppercase tracking-widest py-6 mt-8 hover:bg-orange-600 transition-colors">
                   APPLY NOW — MAY 2026 COHORT
                 </button>
-                <div className="text-center mt-6">
-                  <p className="font-mono text-xs uppercase tracking-widest text-white/40">
-                    Questions before applying? Email cohort@bloomsday.co — we respond within 24 hours.
-                  </p>
-                </div>
               </form>
             )}
           </div>
+
+          {/* 6.5 WHAT HAPPENS AFTER YOU APPLY (TASK 11) */}
+          <div className="bg-off-black border border-white/20 p-10 md:p-14">
+            <h3 className="font-sans text-2xl font-bold uppercase tracking-tight mb-8 border-b border-white/20 pb-4">
+              WHAT HAPPENS AFTER YOU APPLY
+            </h3>
+            <ul className="space-y-6 font-serif text-lg text-white/80">
+              <li className="flex items-start gap-4">
+                <div className="font-mono text-signal-orange font-bold text-sm mt-1 shrink-0">01</div>
+                Applications are reviewed within 48 hours
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="font-mono text-signal-orange font-bold text-sm mt-1 shrink-0">02</div>
+                If accepted, you will receive an enrollment link to complete payment and select your cohort session (A or B)
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="font-mono text-signal-orange font-bold text-sm mt-1 shrink-0">03</div>
+                Seats are reserved in order of enrollment completion — not application submission
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="font-mono text-signal-orange font-bold text-sm mt-1 shrink-0">04</div>
+                If you are not accepted for this cohort, we will tell you exactly what to complete before the next one
+              </li>
+              <li className="flex items-start gap-4">
+                <div className="font-mono text-signal-orange font-bold text-sm mt-1 shrink-0">05</div>
+                The May 2026 cohort will sell out. It always does.
+              </li>
+            </ul>
+          </div>
+
         </div>
       </section>
 
       {/* 7. BOTTOM CTA */}
       <section className="py-24 px-6 lg:px-12 text-center border-t border-absolute-black/20">
-        <h2 className="text-3xl font-bold uppercase tracking-tighter mb-4 text-stark-white">THIRTY SEATS. TWO SESSIONS. YOUR PRODUCT, LAUNCHED IN SIX WEEKS.</h2>
+        <h2 className="text-3xl font-bold uppercase tracking-tighter mb-12 text-stark-white">THIRTY SEATS. TWO SESSIONS. YOUR PRODUCT, LAUNCHED IN SIX WEEKS.</h2>
+        <Link href="#apply" className="inline-block bg-signal-orange text-stark-white font-mono text-sm font-bold uppercase tracking-widest px-12 py-5 hover:bg-orange-600 transition-colors shadow-2xl shadow-signal-orange/20 mb-6">
+          APPLY NOW — MAY 2026 COHORT
+        </Link>
+        <p className="font-mono text-xs uppercase tracking-widest text-white/40">
+          Questions before applying? Email cohort@bloomsday.co — we respond within 24 hours.
+        </p>
       </section>
     </div>
   );

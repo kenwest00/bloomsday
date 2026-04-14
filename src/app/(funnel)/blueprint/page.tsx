@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Check, Minus } from "lucide-react";
+import { useState } from "react";
+import AuthorByline from "@/components/AuthorByline";
 
 const fadeInUP = {
   hidden: { opacity: 0, y: 30 },
@@ -18,6 +20,14 @@ const staggerContainer = {
 };
 
 export default function Blueprint() {
+  const [checkoutSubmitted, setCheckoutSubmitted] = useState(false);
+  const [checkoutForm, setCheckoutForm] = useState({ name: '', email: '' });
+
+  const handleCheckoutSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setCheckoutSubmitted(true);
+  };
+
   return (
     <div className="bg-absolute-black min-h-screen pb-32 font-sans text-stark-white">
       {/* 1. HERO */}
@@ -26,9 +36,15 @@ export default function Blueprint() {
           <motion.div variants={fadeInUP} className="font-mono text-signal-orange uppercase tracking-widest text-sm mb-6 font-bold">
             TIER 1 — $79
           </motion.div>
-          <motion.h1 variants={fadeInUP} className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-8 leading-[0.9]">
+          <motion.h1 variants={fadeInUP} className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-12 leading-[0.9]">
             EVERYTHING YOU NEED TO IDENTIFY YOUR FIRST DIGITAL PRODUCT. IN ONE WEEKEND.
           </motion.h1>
+
+          {/* FOUNDER BYLINE INJECTION */}
+          <motion.div variants={fadeInUP} className="max-w-2xl mx-auto text-left mb-12">
+            <AuthorByline />
+          </motion.div>
+
           <motion.p variants={fadeInUP} className="font-serif text-xl md:text-2xl leading-relaxed text-white/80 max-w-3xl mx-auto mb-12 italic">
             Most professionals spend years thinking about building something. The Blueprint is the program that ends the thinking and starts the building.
           </motion.p>
@@ -183,23 +199,76 @@ export default function Blueprint() {
         </div>
       </section>
 
-      {/* 5. CHECKOUT/CTA */}
-      <section id="checkout" className="py-32 px-6 lg:px-12 text-center bg-signal-orange text-absolute-black">
+      {/* ADDITIONAL STUDENT OUTCOME STORY */}
+      <section className="py-24 px-6 lg:px-12 bg-off-black border-b border-white/20">
+        <div className="max-w-4xl mx-auto border-l-4 border-[var(--category-mindset)] pl-8 py-2">
+          <div className="font-mono text-[var(--category-mindset)] text-sm tracking-widest uppercase font-bold mb-6">
+            [ WHAT A BLUEPRINT BUILDS ]
+          </div>
+          <p className="font-serif text-xl md:text-2xl text-white/90 leading-relaxed italic mb-8">
+            &quot;Donna M., a healthcare compliance director with 16 years in the field, used The Blueprint to identify and design a self-paced audit readiness course. She launched it at $349. In the first 90 days, 40 hospital administrators enrolled. She made more in those 90 days than in any previous quarter — without a single consultation call.&quot;
+          </p>
+          <div className="font-mono text-xs uppercase tracking-widest text-white/50">
+            — Built using The Digital Product Blueprint
+          </div>
+        </div>
+      </section>
+
+      {/* 5. CHECKOUT/CTA (UPGRADED CAPTURE) */}
+      <section id="checkout" className="py-32 px-6 lg:px-12 bg-signal-orange text-absolute-black">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUP} className="max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-8 leading-none">
+          <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-8 leading-none text-center">
             STOP THINKING ABOUT IT.<br/>START BUILDING IT.
           </h2>
           
-          <button className="bg-absolute-black text-stark-white w-full max-w-md py-6 font-mono text-lg font-bold uppercase tracking-widest hover:bg-absolute-black/90 transition-colors mb-6 shadow-2xl shadow-absolute-black/20">
-            GET INSTANT ACCESS — $79
-          </button>
+          <div className="bg-white p-8 md:p-12 shadow-2xl mt-12 mb-8">
+            {checkoutSubmitted ? (
+              <div className="text-center py-10">
+                <Check className="mx-auto text-signal-orange mb-4" size={48} />
+                <h3 className="font-sans text-2xl font-bold uppercase tracking-tight mb-2">YOU&apos;RE ON THE LIST.</h3>
+                <p className="font-serif text-lg text-absolute-black/70">Our payment gateway is launching this week. We will email you the secure checkout link as soon as it goes live.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleCheckoutSubmit} className="flex flex-col gap-4">
+                <div className="font-sans font-bold text-center text-xl uppercase tracking-tighter mb-4">
+                  CHECKOUT INTEGRATION PENDING.<br/>RESERVE YOUR ACCESS NOW.
+                </div>
+                <input 
+                  required
+                  type="text" 
+                  placeholder="Full Name" 
+                  className="w-full border border-absolute-black/20 p-4 font-sans focus:outline-none focus:border-signal-orange"
+                  value={checkoutForm.name}
+                  onChange={(e) => setCheckoutForm({...checkoutForm, name: e.target.value})}
+                />
+                <input 
+                  required
+                  type="email" 
+                  placeholder="Email Address" 
+                  className="w-full border border-absolute-black/20 p-4 font-sans focus:outline-none focus:border-signal-orange"
+                  value={checkoutForm.email}
+                  onChange={(e) => setCheckoutForm({...checkoutForm, email: e.target.value})}
+                />
+                <button type="submit" className="bg-absolute-black text-stark-white w-full py-6 font-mono text-lg font-bold uppercase tracking-widest hover:bg-absolute-black/90 transition-colors mt-2">
+                  GET INSTANT ACCESS — $79
+                </button>
+              </form>
+            )}
+          </div>
           
-          <div className="font-mono text-sm uppercase tracking-widest font-bold">
+          <div className="font-mono text-sm uppercase tracking-widest font-bold text-center mb-8">
             🔒 30-Day Money-Back Guarantee.
             <span className="block font-serif text-base capitalize mt-2 italic font-normal text-absolute-black/70">No questions asked.</span>
           </div>
 
-          <div className="mt-12 pt-12 border-t border-absolute-black/20">
+          <div className="text-center font-serif text-lg py-8 border-y border-absolute-black/20 mb-12">
+            Already know what you want to build? Skip ahead to The No-Code Product Builder ($797) — and we&apos;ll credit your Blueprint purchase in full. 
+            <Link href="/builder" className="inline-block mt-2 font-mono text-sm uppercase tracking-widest border-b border-absolute-black ml-2 font-bold hover:opacity-70 transition-opacity">
+              [ LEARN ABOUT THE BUILDER &rarr; ]
+            </Link>
+          </div>
+
+          <div className="text-center border-absolute-black/20">
             <Link href="/blog" className="font-mono text-sm tracking-widest uppercase border-b border-absolute-black pb-1 hover:opacity-50 transition-opacity">
               TAKE THE EXPERTISE AUDIT FIRST (FREE) &rarr;
             </Link>
