@@ -24,8 +24,8 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bloomsday",
-  description: "The modern professional's guide to scale.",
+  title: "Bloomsday | Turn Expertise into Income & Productize Expertise",
+  description: "The modern professional's guide to scale. Learn how to productize expertise, build a digital product for consultants, and leverage the no-code product builder.",
 };
 
 export default function RootLayout({

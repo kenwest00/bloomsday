@@ -2,246 +2,210 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import { Check } from "lucide-react";
 
 const fadeInUP = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.2 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
-export default function BlueprintLanding() {
+export default function Blueprint() {
   return (
-    <>
-      {/* 1. The Hero Section (The Hook) */}
-      <section className="relative min-h-screen flex items-center justify-center bg-absolute-black px-6 text-center">
-        <div className="max-w-6xl mx-auto relative z-10 flex flex-col items-center">
-          <motion.h1 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2 }}
-            className="font-sans text-[clamp(2.5rem,6vw,7rem)] leading-[0.9] font-bold tracking-tighter uppercase mb-10"
-          >
-            YOUR JUDGMENT IS AN ASSET.<br/>
-            <span className="text-stark-white/60">STOP SELLING IT BY THE HOUR.</span>
+    <div className="bg-absolute-black min-h-screen pb-32 font-sans text-stark-white">
+      {/* 1. HERO */}
+      <section className="pt-32 pb-20 px-6 lg:px-12 text-center max-w-5xl mx-auto">
+        <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
+          <motion.div variants={fadeInUP} className="font-mono text-signal-orange uppercase tracking-widest text-sm mb-6 font-bold">
+            TIER 1 — $79
+          </motion.div>
+          <motion.h1 variants={fadeInUP} className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-8 leading-[0.9]">
+            EVERYTHING YOU NEED TO IDENTIFY YOUR FIRST DIGITAL PRODUCT. IN ONE WEEKEND.
           </motion.h1>
-          
-          <motion.p 
-            variants={fadeInUP}
-            initial="hidden"
-            animate="visible"
-            className="font-serif text-2xl md:text-3xl italic text-stark-white/80 max-w-4xl mx-auto mb-16 leading-relaxed"
-          >
-            You have spent a decade building deep domain expertise. Now, learn how to extract that knowledge and package it into scalable digital assets—without writing a single line of code.
+          <motion.p variants={fadeInUP} className="font-serif text-xl md:text-2xl leading-relaxed text-white/80 max-w-3xl mx-auto mb-12 italic">
+            Most professionals spend years thinking about building something. The Blueprint is the program that ends the thinking and starts the building.
           </motion.p>
-          
-          <motion.div 
-            variants={fadeInUP}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-center"
-          >
-            <Link 
-              href="/checkout/tier1" 
-              className="bg-signal-orange text-stark-white px-12 py-6 font-sans font-bold uppercase tracking-widest text-lg md:text-xl hover:bg-orange-600 transition-colors shadow-2xl shadow-signal-orange/20"
-            >
-              GET THE BLUEPRINT ($79)
+          <motion.div variants={fadeInUP}>
+            <Link href="#checkout" className="inline-block bg-signal-orange text-stark-white font-mono text-sm font-bold uppercase tracking-widest px-12 py-5 hover:bg-orange-600 transition-colors shadow-2xl shadow-signal-orange/20">
+              GET INSTANT ACCESS — $79
             </Link>
-            <p className="mt-6 font-mono text-xs uppercase tracking-widest text-stark-white/50">
-              [ FOR PROFESSIONALS WITH 10+ YEARS OF EXPERIENCE ]
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* 2. THE PROMISE */}
+      <section className="py-20 px-6 lg:px-12 bg-stark-white text-absolute-black border-y border-white/10">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUP}>
+            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter mb-10 text-center">
+              By the end of this weekend program, you will know:
+            </h2>
+            <div className="space-y-6 font-serif text-xl">
+              {[
+                "Exactly which area of your expertise has the strongest product-market fit",
+                "What format your product should take — and why",
+                "What to charge — and the psychology behind your price point",
+                "How to describe your product so your ideal buyer immediately understands why they need it",
+                "What to build first, what to defer, and what to skip entirely"
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-4">
+                  <Check className="text-signal-orange mt-1 flex-shrink-0" size={24} />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 3. MODULE BREAKDOWN */}
+      <section className="py-32 px-6 lg:px-12 max-w-5xl mx-auto">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUP} className="mb-20 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4 text-stark-white">
+            MODULE BREAKDOWN
+          </h2>
+          <div className="w-16 h-1 bg-signal-orange mx-auto"></div>
+        </motion.div>
+
+        <div className="space-y-12">
+          {/* Module 1 */}
+          <div className="border border-white/20 p-8 md:p-12 relative bg-off-black">
+            <div className="font-mono text-signal-orange text-xs font-bold uppercase tracking-widest mb-4">
+              Saturday Morning, ~2 hours
+            </div>
+            <h3 className="text-3xl font-bold uppercase tracking-tight mb-6">
+              MODULE 1 — THE DOMAIN LEVERAGE AUDIT
+            </h3>
+            <p className="font-serif text-xl text-white/80 leading-relaxed">
+              You will complete a structured inventory of every area of expertise you hold and score each one across four dimensions: urgency of need, uniqueness of your depth, accessibility to your ideal buyer, and your willingness to teach it. Most professionals are surprised to discover their highest-value knowledge area is not the one they expected.
             </p>
-          </motion.div>
+          </div>
+
+          {/* Module 2 */}
+          <div className="border border-white/20 p-8 md:p-12 relative bg-off-black">
+            <div className="font-mono text-signal-orange text-xs font-bold uppercase tracking-widest mb-4">
+              Saturday Afternoon, ~1.5 hours
+            </div>
+            <h3 className="text-3xl font-bold uppercase tracking-tight mb-6">
+              MODULE 2 — THE BUYER PORTRAIT
+            </h3>
+            <p className="font-serif text-xl text-white/80 leading-relaxed">
+              You will define the exact person most likely to pay for what you know — not a vague demographic, but a specific professional at a specific moment of need. You will write their problem in their language, which becomes the core of your product&apos;s marketing.
+            </p>
+          </div>
+
+          {/* Module 3 */}
+          <div className="border border-white/20 p-8 md:p-12 relative bg-off-black">
+            <div className="font-mono text-signal-orange text-xs font-bold uppercase tracking-widest mb-4">
+              Saturday Afternoon, ~1 hour
+            </div>
+            <h3 className="text-3xl font-bold uppercase tracking-tight mb-6">
+              MODULE 3 — THE PRODUCT FORMAT DECISION
+            </h3>
+            <p className="font-serif text-xl text-white/80 leading-relaxed">
+              Should you build a course? A template? A diagnostic tool? A membership? A guide? This module walks you through the format-fit matrix so you can choose the structure that matches your content, your buyer&apos;s urgency, and your own capacity.
+            </p>
+          </div>
+
+          {/* Module 4 */}
+          <div className="border border-white/20 p-8 md:p-12 relative bg-off-black">
+            <div className="font-mono text-signal-orange text-xs font-bold uppercase tracking-widest mb-4">
+              Saturday Evening, ~45 min
+            </div>
+            <h3 className="text-3xl font-bold uppercase tracking-tight mb-6">
+              MODULE 4 — THE PRICING FRAMEWORK
+            </h3>
+            <p className="font-serif text-xl text-white/80 leading-relaxed">
+              You will establish your launch price using the Bloomsday Value-Anchoring Method — a framework derived from enterprise product pricing principles and adapted for solo practitioner launches.
+            </p>
+          </div>
+
+          {/* Module 5 */}
+          <div className="border border-white/20 p-8 md:p-12 relative bg-off-black">
+            <div className="font-mono text-signal-orange text-xs font-bold uppercase tracking-widest mb-4">
+              Sunday Morning, ~2 hours
+            </div>
+            <h3 className="text-3xl font-bold uppercase tracking-tight mb-6">
+              MODULE 5 — THE PRODUCT ARCHITECTURE MAP
+            </h3>
+            <p className="font-serif text-xl text-white/80 leading-relaxed">
+              You will design the complete structure of your product: what&apos;s included, how it&apos;s sequenced, how it&apos;s delivered, and what the buyer&apos;s transformation looks like from entry to exit.
+            </p>
+          </div>
+
+          {/* Module 6 */}
+          <div className="border border-white/20 p-8 md:p-12 relative bg-off-black">
+            <div className="font-mono text-signal-orange text-xs font-bold uppercase tracking-widest mb-4">
+              Sunday Afternoon, ~1.5 hours
+            </div>
+            <h3 className="text-3xl font-bold uppercase tracking-tight mb-6">
+              MODULE 6 — YOUR 90-DAY LAUNCH ROADMAP
+            </h3>
+            <p className="font-serif text-xl text-white/80 leading-relaxed">
+              You will leave with a sequenced, week-by-week launch plan. Not a wish list — an operational roadmap with specific milestones and decision points.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* 2. The Agitation Section (Naming the Pain) */}
+      {/* 4. WHO IT IS FOR */}
       <section className="bg-stark-white text-absolute-black py-32 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24"
-          >
-            <motion.h2 variants={fadeInUP} className="font-sans text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-none">
-              THE TRAP OF <span className="text-signal-orange">BESPOKE</span> WORK.
-            </motion.h2>
-            <motion.p variants={fadeInUP} className="font-serif text-2xl md:text-3xl leading-relaxed text-absolute-black/80">
-              You are highly competent, well-compensated, and entirely capped by your own time. Every new client requires custom work. Every new project starts with a blank page. You are trading time for money, and you are running out of time.
-            </motion.p>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUP}>
+            <h2 className="text-3xl font-bold uppercase tracking-tight mb-8 border-b-4 border-absolute-black pb-4">
+              WHO THIS IS FOR
+            </h2>
+            <ul className="space-y-4 font-serif text-xl leading-relaxed">
+              <li className="flex items-start gap-3"><Check className="text-signal-orange shrink-0 mt-1" /> Senior professionals with 10 or more years of domain expertise in any field</li>
+              <li className="flex items-start gap-3"><Check className="text-signal-orange shrink-0 mt-1" /> Consultants and practitioners who want to earn income that isn&apos;t tied to their calendar</li>
+              <li className="flex items-start gap-3"><Check className="text-signal-orange shrink-0 mt-1" /> Corporate executives exploring income diversification or an eventual exit from employment</li>
+              <li className="flex items-start gap-3"><Check className="text-signal-orange shrink-0 mt-1" /> Anyone who has said &quot;I should package what I know&quot; and never started</li>
+            </ul>
           </motion.div>
 
-          {/* Three Pillars */}
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-absolute-black/10 pt-16"
-          >
-            <motion.div variants={fadeInUP}>
-              <h3 className="font-sans text-2xl font-bold uppercase mb-6">[ THE CEILING ]</h3>
-              <p className="font-serif text-lg leading-relaxed text-absolute-black/70">
-                Your income is strictly limited by the hours you can physically work. You cannot scale without hiring, which only introduces more management overhead.
-              </p>
-            </motion.div>
-            <motion.div variants={fadeInUP}>
-              <h3 className="font-sans text-2xl font-bold uppercase mb-6">[ THE GOLDEN HANDCUFFS ]</h3>
-              <p className="font-serif text-lg leading-relaxed text-absolute-black/70">
-                You have a great salary, but you own no equity in the systems you build. Your expertise enriches the corporation, not your own portfolio.
-              </p>
-            </motion.div>
-            <motion.div variants={fadeInUP}>
-              <h3 className="font-sans text-2xl font-bold uppercase mb-6">[ THE FRICTION ]</h3>
-              <p className="font-serif text-lg leading-relaxed text-absolute-black/70">
-                You are constantly reinventing the wheel. You have built brilliant internal tools and spreadsheets, but they remain trapped on your hard drive instead of generating revenue in the market.
-              </p>
-            </motion.div>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUP}>
+            <h2 className="text-3xl font-bold uppercase tracking-tight mb-8 border-b-4 border-signal-orange pb-4">
+              WHO THIS IS NOT FOR
+            </h2>
+            <ul className="space-y-4 font-serif text-xl leading-relaxed text-absolute-black/70">
+              <li className="flex items-start gap-3"><Minus className="shrink-0 mt-1 text-absolute-black" /> Early-career professionals still building foundational skills</li>
+              <li className="flex items-start gap-3"><Minus className="shrink-0 mt-1 text-absolute-black" /> People looking for a get-rich-quick solution — this is a framework, not a shortcut</li>
+              <li className="flex items-start gap-3"><Minus className="shrink-0 mt-1 text-absolute-black" /> Anyone not willing to invest a focused weekend</li>
+            </ul>
           </motion.div>
         </div>
       </section>
 
-      {/* 3. The Paradigm Shift */}
-      <section className="bg-off-black py-40 px-6 lg:px-12 relative overflow-hidden flex items-center">
-        {/* Placeholder for missing Digital Wireframe generation */}
-        <div className="absolute inset-0 z-0 bg-absolute-black/50" />
-        
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <motion.h2 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUP}
-            className="font-sans text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-10 text-stark-white"
-          >
-            WELCOME TO YOUR BLOOMSDAY.
-          </motion.h2>
-          <motion.p 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={fadeInUP}
-            className="font-serif text-xl md:text-3xl leading-relaxed text-stark-white/80 italic mb-16"
-          >
-            The tools have changed. The modern no-code stack allows anyone with deep domain expertise to build functional, highly profitable digital assets in a single weekend. The hard part is no longer the technology; the hard part is the extraction. 
-            <br/><br/>
-            <span className="text-signal-orange">We teach you how to package your ten years of experience into a product that works while you sleep.</span>
-          </motion.p>
-        </div>
-      </section>
-
-      {/* 4. The Proof Section (Carousels) */}
-      <section className="py-32 bg-absolute-black overflow-hidden relative border-y border-off-black">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-16">
-          <h2 className="font-sans text-4xl tracking-widest uppercase text-stark-white">PROOF OF WORK.</h2>
-          <div className="w-24 h-1 bg-signal-orange mt-4"></div>
-        </div>
-        
-        <div className="flex gap-8 overflow-x-auto px-6 lg:px-12 pb-12 snap-x wrapper-scroll no-scrollbar">
-          {/* Card 1 */}
-          <div className="min-w-[85vw] md:min-w-[600px] shrink-0 snap-center bg-off-black border border-white/10 group">
-            <div className="h-64 w-full bg-stark-white relative overflow-hidden">
-               <Image src="/images/architecture.png" alt="Brutalist structure" fill className="object-cover grayscale group-hover:scale-105 transition-transform duration-700" />
-            </div>
-            <div className="p-10">
-              <span className="font-mono text-sm tracking-widest uppercase text-signal-orange mb-4 block">THE CONSULTANT</span>
-              <h3 className="font-sans text-2xl font-bold uppercase mb-4 leading-tight">How a 12-year compliance consultant turned her audit framework into a $4,000/mo SaaS tool.</h3>
-              <p className="font-serif text-lg text-stark-white/70">She productized her bespoke consulting service using Airtable, creating recurring revenue without client calls.</p>
-            </div>
-          </div>
-          {/* Card 2 */}
-          <div className="min-w-[85vw] md:min-w-[600px] shrink-0 snap-center bg-off-black border border-white/10 group">
-            <div className="h-64 w-full bg-stark-white relative overflow-hidden">
-               <Image src="/images/nature.png" alt="Nature vs structure" fill className="object-cover grayscale group-hover:scale-105 transition-transform duration-700" />
-            </div>
-            <div className="p-10">
-              <span className="font-mono text-sm tracking-widest uppercase text-signal-orange mb-4 block">THE EXECUTIVE</span>
-              <h3 className="font-sans text-2xl font-bold uppercase mb-4 leading-tight">How a Director of Logistics built an internal routing dashboard that saved 40 hours a week.</h3>
-              <p className="font-serif text-lg text-stark-white/70">He leveraged his domain knowledge to build a high-impact internal tool, proving his value and securing a promotion.</p>
-            </div>
-          </div>
-          {/* Card 3 */}
-          <div className="min-w-[85vw] md:min-w-[600px] shrink-0 snap-center bg-off-black border border-white/10 group">
-            <div className="h-64 w-full bg-stark-white relative overflow-hidden">
-               <Image src="/images/architecture.png" alt="Brutalist structure" fill className="object-cover scale-110 grayscale group-hover:scale-100 transition-transform duration-700" />
-            </div>
-            <div className="p-10">
-              <span className="font-mono text-sm tracking-widest uppercase text-signal-orange mb-4 block">THE OPERATOR</span>
-              <h3 className="font-sans text-2xl font-bold uppercase mb-4 leading-tight">How a commercial architect productized his material-selection spreadsheet into a paid digital asset.</h3>
-              <p className="font-serif text-lg text-stark-white/70">He took an internal tool he used daily and packaged it for the broader market, creating a new income stream.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. The Offer Section */}
-      <section className="bg-absolute-black py-32 px-6 lg:px-12 text-center">
-        <div className="max-w-5xl mx-auto">
-          <motion.h2 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUP}
-            className="font-sans text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-6"
-          >
-            THE DIGITAL PRODUCT BLUEPRINT.
-          </motion.h2>
-          <motion.p 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUP}
-            className="font-serif text-2xl italic text-stark-white/80 max-w-3xl mx-auto mb-20"
-          >
-            A structured, weekend-long curriculum designed to help you identify the exact piece of your domain knowledge that can be turned into a profitable digital product.
-          </motion.p>
+      {/* 5. CHECKOUT/CTA */}
+      <section id="checkout" className="py-32 px-6 lg:px-12 text-center bg-signal-orange text-absolute-black">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUP} className="max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-8 leading-none">
+            STOP THINKING ABOUT IT.<br/>START BUILDING IT.
+          </h2>
           
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 gap-10 text-left mb-24"
-          >
-            <div className="border border-white/10 p-10 bg-off-black hover:border-stark-white transition-colors duration-300">
-              <span className="font-mono text-signal-orange mb-4 block">[ MODULE 1 ]</span>
-              <h3 className="font-sans text-2xl font-bold uppercase mb-4">THE EXPERTISE AUDIT</h3>
-              <p className="font-serif text-lg text-stark-white/70">Discover the hidden assets in your daily workflow. Learn what you do effortlessly that others struggle with.</p>
-            </div>
-            <div className="border border-white/10 p-10 bg-off-black hover:border-stark-white transition-colors duration-300">
-              <span className="font-mono text-signal-orange mb-4 block">[ MODULE 2 ]</span>
-              <h3 className="font-sans text-2xl font-bold uppercase mb-4">THE ONE-CLICK SOLUTION</h3>
-              <p className="font-serif text-lg text-stark-white/70">Design a product that eliminates friction for your users. Turn your messy process into a clean UI.</p>
-            </div>
-            <div className="border border-white/10 p-10 bg-off-black hover:border-stark-white transition-colors duration-300">
-              <span className="font-mono text-signal-orange mb-4 block">[ MODULE 3 ]</span>
-              <h3 className="font-sans text-2xl font-bold uppercase mb-4">THE NO-CODE STACK</h3>
-              <p className="font-serif text-lg text-stark-white/70">Select the exact tools you need to build without code. No bloat, no unnecessary subscriptions.</p>
-            </div>
-            <div className="border border-white/10 p-10 bg-off-black hover:border-stark-white transition-colors duration-300">
-              <span className="font-mono text-signal-orange mb-4 block">[ MODULE 4 ]</span>
-              <h3 className="font-sans text-2xl font-bold uppercase mb-4">THE 48-HOUR VALIDATION</h3>
-              <p className="font-serif text-lg text-stark-white/70">Prove market demand before you spend a minute building. Real dollars from real customers.</p>
-            </div>
-          </motion.div>
+          <button className="bg-absolute-black text-stark-white w-full max-w-md py-6 font-mono text-lg font-bold uppercase tracking-widest hover:bg-absolute-black/90 transition-colors mb-6 shadow-2xl shadow-absolute-black/20">
+            GET INSTANT ACCESS — $79
+          </button>
+          
+          <div className="font-mono text-sm uppercase tracking-widest font-bold">
+            🔒 30-Day Money-Back Guarantee.
+            <span className="block font-serif text-base capitalize mt-2 italic font-normal text-absolute-black/70">No questions asked.</span>
+          </div>
 
-          <Link 
-            href="/checkout/tier1" 
-            className="inline-block bg-signal-orange text-stark-white px-16 py-6 font-sans font-bold uppercase tracking-widest text-2xl hover:bg-orange-600 transition-colors shadow-2xl shadow-signal-orange/20"
-          >
-            START BUILDING ($79)
-          </Link>
-        </div>
+          <div className="mt-12 pt-12 border-t border-absolute-black/20">
+            <Link href="/blog" className="font-mono text-sm tracking-widest uppercase border-b border-absolute-black pb-1 hover:opacity-50 transition-opacity">
+              TAKE THE EXPERTISE AUDIT FIRST (FREE) &rarr;
+            </Link>
+          </div>
+        </motion.div>
       </section>
-
-    </>
+    </div>
   );
 }

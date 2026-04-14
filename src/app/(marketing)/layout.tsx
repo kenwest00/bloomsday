@@ -17,9 +17,9 @@ export default function MarketingLayout({
           <div className="hidden md:flex space-x-8 font-mono text-sm uppercase tracking-widest items-center">
             <Link href="/about" className="hover:text-signal-orange transition-colors duration-300">The Methodology</Link>
             <Link href="/curriculum" className="hover:text-stark-white text-stark-white/70 transition-colors duration-300">The Curriculum</Link>
-            <Link href="/blog" className="hover:text-stark-white text-stark-white/70 transition-colors duration-300">Private List</Link>
-            <Link href="/login" className="px-4 py-2 border border-stark-white hover:bg-stark-white hover:text-absolute-black transition-colors duration-300">
-              [ LOGIN ]
+            <Link href="/blog" className="hover:text-stark-white text-stark-white/70 transition-colors duration-300">The Bloomsday Letter</Link>
+            <Link href="/accelerator" className="px-4 py-2 border border-stark-white hover:bg-stark-white hover:text-absolute-black transition-colors duration-300">
+              [ APPLY TO THE ACCELERATOR ]
             </Link>
           </div>
         </div>
