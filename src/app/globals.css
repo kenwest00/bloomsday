@@ -10,8 +10,20 @@
 
 @layer utilities {
   .unicase {
-    /* For the SOVMOD stylistic look */
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
+  .outline-text {
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+  }
+}
+
+/* Custom Scrollbar for wrappers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
