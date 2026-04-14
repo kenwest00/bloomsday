@@ -43,7 +43,7 @@ export default function Home() {
             animate="visible"
             className="font-sans text-xl md:text-3xl tracking-widest uppercase text-signal-orange mb-8"
           >
-            THE MODERN PROFESSIONAL'S GUIDE TO SCALE.
+            THE MODERN PROFESSIONAL&apos;S GUIDE TO SCALE.
           </motion.h2>
           
           <motion.p 
@@ -193,13 +193,13 @@ export default function Home() {
           </h2>
           <div className="font-serif text-2xl md:text-3xl leading-loose text-left mb-16">
             <p className="mb-8">
-              "I spent 25 years building digital products for the world's largest brands. I watched brilliant lawyers, engineers, and executives struggle to scale their impact because they lacked the technical vocabulary to productize what they knew.
+              &quot;I spent 25 years building digital products for the world&apos;s largest brands. I watched brilliant lawyers, engineers, and executives struggle to scale their impact because they lacked the technical vocabulary to productize what they knew.
             </p>
             <p className="mb-8">
-              They believed they needed venture capital. They didn't. They just needed a framework.
+              They believed they needed venture capital. They didn&apos;t. They just needed a framework.
             </p>
             <p className="italic font-bold">
-              Bloomsday is that framework."
+              Bloomsday is that framework.&quot;
             </p>
           </div>
           <p className="font-mono uppercase tracking-widest text-right text-sm">

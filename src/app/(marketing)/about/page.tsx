@@ -23,7 +23,7 @@ export default function Methodology() {
             transition={{ duration: 1, delay: 0.2 }}
             className="font-serif text-3xl italic max-w-4xl leading-relaxed"
           >
-            We believe that a professional's judgment is their most valuable asset, and that selling it by the hour is a fundamental misallocation of capital.
+            We believe that a professional&apos;s judgment is their most valuable asset, and that selling it by the hour is a fundamental misallocation of capital.
           </motion.p>
         </div>
       </section>

@@ -37,7 +37,7 @@ export default function Blog() {
                 [ THE MYTH OF PASSIVE INCOME ]
               </h2>
               <p className="font-serif text-xl text-absolute-black/80 leading-relaxed">
-                Why "passive income" is a lie sold to amateurs, and why professionals should focus on "asymmetric leverage" instead.
+                Why &quot;passive income&quot; is a lie sold to amateurs, and why professionals should focus on &quot;asymmetric leverage&quot; instead.
               </p>
             </div>
           </Link>
