@@ -27,3 +27,8 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Cache bust rule injection */
+.cache-bust-netlify-01 {
+  display: none;
+}
