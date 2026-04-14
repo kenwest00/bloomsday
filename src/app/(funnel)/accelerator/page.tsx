@@ -67,7 +67,7 @@ export default function Accelerator() {
               THIS IS NOT A COURSE. IT IS A BUILD.
             </h2>
             <p className="font-serif text-2xl leading-relaxed">
-              Every week, your cohort meets live. Every week, you produce something. By week six, you have a launched product and your first customer. The Accelerator is structured around accountability, not information. You do not need more to read. You need a deadline and a room full of people who will hold you to it.
+              Every week, your cohort meets live. Every week, you produce something. By week six, you have a firm product concept, segment-specific customer strategies, and clear direction on your next move. The Accelerator is structured around accountability, not information. You do not need more to read. You need a deadline and a room full of people who will hold you to it.
             </p>
           </motion.div>
         </div>
