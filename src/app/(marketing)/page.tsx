@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const fadeInUP = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
 const staggerContainer = {
@@ -31,7 +31,7 @@ export default function Home() {
           <motion.h1 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 1.2 }}
             className="font-sans text-[clamp(3rem,8vw,10rem)] leading-none font-bold tracking-tighter uppercase mb-6"
           >
             BLOOMSDAY
