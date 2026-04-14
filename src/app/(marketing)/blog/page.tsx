@@ -160,11 +160,7 @@ export default function Blog() {
                        </div>
                      </div>
                      
-                     <style jsx>{`
-                       .hover-shadow:hover {
-                         box-shadow: var(--card-shadow-hover);
-                       }
-                     `}</style>
+
                    </Link>
                  </motion.div>
                );

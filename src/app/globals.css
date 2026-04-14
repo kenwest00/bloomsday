@@ -15,6 +15,14 @@
   --text-preview: #444444;
 }
 
+.hover-shadow {
+  transition: box-shadow 0.2s ease;
+}
+.hover-shadow:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+
 @layer base {
   body {
     @apply bg-absolute-black text-stark-white antialiased overflow-x-hidden;
