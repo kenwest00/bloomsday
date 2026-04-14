@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --category-mindset: #C9A84C;
+  --category-pricing: #5C8A6E;
+  --category-no-code: #4A6FA5;
+  --category-launch: #B85C3A;
+  --category-architecture: #6B7280;
+  --card-border: #E8E8E8;
+  --card-hover-bg: #FAFAF8;
+  --card-shadow-hover: 0 4px 16px rgba(0,0,0,0.07);
+  --text-meta: #999999;
+  --text-preview: #444444;
+}
+
 @layer base {
   body {
     @apply bg-absolute-black text-stark-white antialiased overflow-x-hidden;
