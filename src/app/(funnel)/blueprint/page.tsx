@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { Check, Minus } from "lucide-react";
 
 const fadeInUP = {
   hidden: { opacity: 0, y: 30 },
