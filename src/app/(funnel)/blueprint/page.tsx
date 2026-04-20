@@ -52,6 +52,9 @@ export default function Blueprint() {
             <Link href="#checkout" className="inline-block bg-signal-orange text-stark-white font-mono text-sm font-bold uppercase tracking-widest px-12 py-5 hover:bg-orange-600 transition-colors shadow-2xl shadow-signal-orange/20">
               GET INSTANT ACCESS — $79
             </Link>
+            <p className="font-serif text-base italic text-stark-white/70 mt-4">
+              Less than 15 minutes of your billable rate.
+            </p>
           </motion.div>
         </motion.div>
       </section>

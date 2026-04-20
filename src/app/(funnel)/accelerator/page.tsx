@@ -45,7 +45,7 @@ export default function Accelerator() {
             TIER 3 — $3,000
           </motion.div>
           <motion.h1 variants={fadeInUP} className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-8 leading-[0.9]">
-            SIX WEEKS. YOUR PRODUCT. LAUNCHED.
+            YOU DO NOT NEED MORE TO READ.<br/>YOU NEED A DEADLINE AND A ROOM FULL OF PEERS WHO WILL HOLD YOU TO IT.
           </motion.h1>
           <motion.p variants={fadeInUP} className="font-serif text-xl md:text-2xl leading-relaxed text-white/80 max-w-4xl mx-auto mb-12 italic">
             The Accelerator is Bloomsday&apos;s live, cohort-based program for senior professionals who are done waiting. You will build and launch a revenue-generating digital product in six weeks — with direct guidance from Ken West and a cohort of peers who operate at your level.
@@ -220,7 +220,7 @@ export default function Accelerator() {
             <ul className="space-y-4 font-serif text-lg leading-relaxed">
               <li className="flex items-start gap-3"><Check className="text-signal-orange shrink-0 mt-1" /> Six live, 2-hour weekly sessions with Ken West (recorded for replay)</li>
               <li className="flex items-start gap-3"><Check className="text-signal-orange shrink-0 mt-1" /> Direct feedback on your product, positioning, and launch from Ken</li>
-              <li className="flex items-start gap-3"><Check className="text-signal-orange shrink-0 mt-1" /> Full access to The No-Code Product Builder curriculum as a reference resource</li>
+              <li className="flex items-start gap-3"><Check className="text-signal-orange shrink-0 mt-1" /> Full access to The Product Builder curriculum as a reference resource</li>
               <li className="flex items-start gap-3"><Check className="text-signal-orange shrink-0 mt-1" /> A private cohort Slack channel — your peer group for six weeks</li>
               <li className="flex items-start gap-3"><Check className="text-signal-orange shrink-0 mt-1" /> Lifetime access to the Accelerator alumni network</li>
               <li className="flex items-start gap-3"><Check className="text-signal-orange shrink-0 mt-1" /> Two 1:1 office hours slots with Ken during the cohort</li>

@@ -39,7 +39,7 @@ export default function Builder() {
           <motion.h1 variants={fadeInUP} className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-8 leading-[0.9]">
             YOUR PRODUCT. BUILT. LAUNCHED. GENERATING REVENUE.
             <br />
-            <span className="text-stark-white">WITHOUT WRITING A SINGLE LINE OF CODE.</span>
+            <span className="text-stark-white">WITHOUT AN ENGINEERING TEAM.</span>
           </motion.h1>
 
           {/* 3.2 FOUNDER BYLINE */}
@@ -48,7 +48,7 @@ export default function Builder() {
           </motion.div>
 
           <motion.p variants={fadeInUP} className="font-serif text-xl md:text-2xl leading-relaxed text-white/80 max-w-4xl mx-auto mb-12 italic">
-            The No-Code Product Builder is the comprehensive, self-paced masterclass that takes you from concept to a live, automated, revenue-generating digital product — using the same no-code stack that elite teams use to ship in weeks, not months.
+            The Product Builder is the comprehensive, self-paced masterclass that takes you from concept to a live, automated, revenue-generating digital product — using the same modern software stack that elite teams use to ship in weeks, not months.
           </motion.p>
           <motion.div variants={fadeInUP} className="flex flex-col items-center">
             <Link href="#checkout" className="inline-block bg-[#4A6FA5] text-stark-white font-mono text-sm font-bold uppercase tracking-widest px-12 py-5 hover:bg-[#355380] transition-colors shadow-2xl mb-6">
@@ -106,9 +106,9 @@ export default function Builder() {
             <div className="flex items-center justify-center w-10 h-10 rounded-none border-2 border-[#4A6FA5] bg-absolute-black font-mono text-[#4A6FA5] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow">1</div>
             <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-8 bg-off-black border border-white/10">
               <div className="font-mono text-xs text-[#4A6FA5] mb-2 tracking-widest uppercase font-bold">Weeks 1–2</div>
-              <h3 className="font-sans font-bold text-xl uppercase mb-4 text-stark-white">UNIT 1 — THE NO-CODE ARCHITECTURE</h3>
+              <h3 className="font-sans font-bold text-xl uppercase mb-4 text-stark-white">UNIT 1 — THE MODERN SOFTWARE STACK</h3>
               <p className="font-serif text-lg text-white/80 leading-relaxed">
-                You will learn how the modern no-code stack is structured and which tools do which jobs. No technical background required. You will understand the system as an architect, not as a user clicking buttons. Tools covered: Notion, Gumroad, Lemon Squeezy, Beehiiv, ConvertKit, Airtable, Webflow, and Zapier.
+                You will learn how the modern software stack is structured and which tools do which jobs. No technical background required. You will understand the system as an architect, not as a user clicking buttons. Tools covered: Notion, Gumroad, Lemon Squeezy, Beehiiv, ConvertKit, Airtable, Webflow, and Zapier.
               </p>
             </div>
           </div>

@@ -187,10 +187,10 @@ export default function Curriculum() {
                 </div>
               </div>
               <h3 className="font-sans text-[22px] md:text-[24px] font-bold uppercase tracking-tight text-[#1A1A2D] mb-4">
-                THE NO-CODE PRODUCT BUILDER
+                THE PRODUCT BUILDER
               </h3>
               <p className="font-serif text-[14px] md:text-[15px] leading-relaxed text-[#444444] mb-8">
-                The comprehensive, self-paced masterclass on the modern no-code stack. You will go from concept to a fully operational, revenue-generating digital product — with automated delivery, a checkout system connected to your bank account, and zero code required. Most students make their first sale before the course ends.
+                The comprehensive, self-paced masterclass on the modern software stack. You will go from concept to a fully operational, revenue-generating digital product — with automated delivery, a checkout system connected to your bank account, and zero engineering team required. Most students make their first sale before the course ends.
               </p>
               
               <div className="mb-10 flex-grow">

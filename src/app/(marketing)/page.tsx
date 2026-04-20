@@ -144,15 +144,14 @@ export default function Home() {
             YOUR EXPERTISE<br/>IS THE PRODUCT.
           </motion.h1>
           
-          <motion.p 
-            variants={fadeInUP}
-            initial="hidden"
-            animate="visible"
-            className="font-serif text-xl md:text-3xl italic text-stark-white/80 max-w-4xl mx-auto mb-16 leading-relaxed"
-          >
-            You have spent a decade — maybe two — becoming one of the best in your field. 
-            Bloomsday is the system for converting that judgment into an asset that earns without you in the room.
-          </motion.p>
+          <mot            <motion.p 
+              variants={fadeInUP}
+              initial="hidden"
+              animate="visible"
+              className="font-serif text-xl md:text-3xl italic text-stark-white/80 max-w-4xl mx-auto mb-16 leading-relaxed"
+            >
+              You have spent a decade — maybe two — becoming one of the best in your field. Bloomsday is the system for converting that judgment into an asset that earns without you in the room.
+            </motion.p>
           
           <motion.div 
             variants={fadeInUP}
@@ -209,7 +208,7 @@ export default function Home() {
             <p className="mb-8">
               Your expertise only has value inside someone else’s org chart. The day the badge stops working, the market forgets what you know. You have built no asset you can carry out the door.
             </p>
-            <p className="font-bold underline decoration-signal-orange decoration-4 underline-offset-8">
+            <p className="mb-8">
               You are not capped because you lack expertise. You are capped because your expertise has no delivery mechanism that works without you in the room.
             </p>
           </motion.div>
@@ -295,10 +294,10 @@ export default function Home() {
                   TIER 2 — $797
                 </div>
                 <h3 className="font-sans text-3xl mb-4 font-bold uppercase tracking-tight text-stark-white">
-                  THE NO-CODE PRODUCT BUILDER
+                  THE PRODUCT BUILDER
                 </h3>
                 <p className="font-serif text-lg text-stark-white/80 mb-8">
-                  The comprehensive, self-paced masterclass. You will go from concept to a fully operational, revenue-generating digital product — with automated delivery, a built-in checkout system, and zero code required.
+                  The comprehensive, self-paced masterclass. You will go from concept to a fully operational, revenue-generating digital product — with automated delivery, a built-in checkout system, and zero engineering team required.
                 </p>
                 <div className="font-sans text-sm uppercase tracking-widest font-bold border-b border-white/20 pb-2 mb-4">What you will walk away with:</div>
                 <ul className="font-serif text-stark-white/80 space-y-3 mb-10 list-disc pl-5">
@@ -325,7 +324,7 @@ export default function Home() {
                   TIER 3 — $3,000
                 </div>
                 <h3 className="font-sans text-3xl mb-4 font-bold uppercase tracking-tight text-stark-white">
-                  THE BLOOMSDAY ACCELERATOR
+                  YOU DO NOT NEED MORE TO READ.<br/>YOU NEED A DEADLINE AND A ROOM FULL OF PEERS WHO WILL HOLD YOU TO IT.
                 </h3>
                 <p className="font-serif text-lg text-stark-white/80 mb-8">
                   A live, 6-week cohort program. Limited to 15 professionals per session. You will build, launch, and begin scaling your product with direct access to Ken West and a cohort of peers at your level.
@@ -358,6 +357,9 @@ export default function Home() {
           <div className="mb-20 md:text-center">
             <h2 className="font-sans text-4xl md:text-6xl font-bold tracking-tighter uppercase mb-4">WHAT HAPPENS WHEN EXPERTISE MEETS A FRAMEWORK.</h2>
             <p className="font-mono text-sm tracking-widest uppercase text-signal-orange font-bold">Real professionals. Real products. Real revenue.</p>
+            <p className="font-serif text-base text-stark-white/70 mt-4 max-w-3xl mx-auto">
+              Results shown are from selected cohort participants. Not every professional who completes Bloomsday launches a revenue-generating product. Most who do report first revenue within 90 days of launch.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -382,7 +384,7 @@ export default function Home() {
                 RAYMOND T. | COMMERCIAL REAL ESTATE BROKER | 22 YEARS
               </div>
               <p className="font-serif text-xl italic mb-6 leading-relaxed">
-                &quot;The problem was, the people who needed me most could not afford my hourly rate. I built a lease negotiation playbook — a $197 digital guide — using the Blueprint framework. I had 80 buyers in the first month. Now I wake up to Stripe notifications instead of another contract to review.&quot;
+                &quot;The lease negotiation playbook now generates steady revenue from buyers who could never have afforded my hourly rate. The product reaches the market I could not.&quot;
               </p>
               <div className="bg-off-black/5 p-6 font-mono text-sm border border-off-black/10">
                 <span className="font-bold">Product built:</span> The Commercial Lease Negotiation Playbook<br/>

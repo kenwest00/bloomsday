@@ -4,12 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const categories = ["ALL", "MINDSET", "PRICING", "NO-CODE", "LAUNCH", "ARCHITECTURE"];
+const categories = ["ALL", "MINDSET", "PRICING", "MODERN STACK", "LAUNCH", "ARCHITECTURE"];
 
 const categoryColors: Record<string, string> = {
   "MINDSET": "var(--category-mindset)",
   "PRICING": "var(--category-pricing)",
-  "NO-CODE": "var(--category-no-code)",
+  "MODERN STACK": "var(--category-no-code)",
   "LAUNCH": "var(--category-launch)",
   "ARCHITECTURE": "var(--category-architecture)"
 };
@@ -38,8 +38,8 @@ const articles = [
   {
     id: "01",
     num: "01",
-    title: "THE NO-CODE STACK FOR 2026",
-    category: "NO-CODE",
+    title: "THE MODERN SOFTWARE STACK FOR 2026",
+    category: "MODERN STACK",
     date: "March 24, 2026",
     readTime: "7 min read",
     preview: "A field guide to the eight tools that senior professionals actually need to build, sell, and deliver a digital product — and the order you should learn them. No fluff, no affiliate links. Just the stack.",
@@ -170,10 +170,10 @@ export default function Blog() {
        {/* Footer CTA */}
        <section className="bg-stark-white text-absolute-black py-20 px-6 max-w-[1200px] mx-auto mt-32 rounded-[2px] border border-white/20 text-center">
          <h2 className="font-sans text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">
-           JOIN THE BLOOMSDAY LETTER.
+           THE BLOOMSDAY LETTER.
          </h2>
          <p className="font-serif text-lg text-absolute-black/70 max-w-2xl mx-auto mb-8">
-           Weekly frameworks on productizing expertise, no-code architecture, and the business of leverage. Read by 10,000+ senior professionals.
+           One dispatch per week. A specific argument about why domain expertise is the only durable moat left for solo operators. No hype. No fluff. Just the architecture.
          </p>
          
          <form className="max-w-xl mx-auto flex flex-col gap-4">
@@ -183,10 +183,10 @@ export default function Blog() {
              className="bg-off-black/5 border border-absolute-black/20 focus:outline-none focus:border-signal-orange text-absolute-black px-6 py-4 font-mono text-sm uppercase tracking-widest"
            />
            <button type="button" className="bg-signal-orange text-stark-white font-sans font-bold uppercase tracking-widest px-8 py-5 hover:bg-orange-600 transition-colors">
-             SEND ME THE EXPERTISE AUDIT
+             GET THE EXPERTISE AUDIT
            </button>
            <p className="font-mono text-xs uppercase tracking-widest text-absolute-black/40 mt-2">
-             No spam. One dispatch per week. Unsubscribe anytime.
+             No spam. No upsell email for 14 days. Unsubscribe anytime.
            </p>
          </form>
        </section>
