@@ -12,7 +12,7 @@ export default function AuthorByline() {
           Ken West
         </div>
         <div className="font-serif italic text-[#666666] text-[12px] leading-snug">
-          Founder, Bloomsday. Digital product architect. Clients include Apple, Google, Home Depot, AT&amp;T.
+          Founder, Bloomsday. 25+ years building digital products for global brands.
         </div>
       </div>
     </div>

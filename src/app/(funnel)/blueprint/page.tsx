@@ -206,10 +206,13 @@ export default function Blueprint() {
             [ WHAT A BLUEPRINT BUILDS ]
           </div>
           <p className="font-serif text-xl md:text-2xl text-white/90 leading-relaxed italic mb-8">
-            &quot;Donna M., a healthcare compliance director with 16 years in the field, used The Blueprint to identify and design a self-paced audit readiness course. She launched it at $349. In the first 90 days, 40 hospital administrators enrolled. She made more in those 90 days than in any previous quarter — without a single consultation call.&quot;
+            &quot;The lease negotiation playbook now generates steady revenue from buyers who could never have afforded my hourly rate. The product reaches the market I could not.&quot;
           </p>
           <div className="font-mono text-xs uppercase tracking-widest text-white/50">
             — Built using The Digital Product Blueprint
+          </div>
+          <p className="font-serif text-base text-white/50 leading-relaxed italic">
+            Results shown are from selected cohort participants. Not every professional who completes Bloomsday launches a revenue-generating product. Most who do report first revenue within 90 days of launch.
           </div>
         </div>
       </section>
@@ -252,13 +255,16 @@ export default function Blueprint() {
                 <button type="submit" className="bg-absolute-black text-stark-white w-full py-6 font-mono text-lg font-bold uppercase tracking-widest hover:bg-absolute-black/90 transition-colors mt-2">
                   GET INSTANT ACCESS — $79
                 </button>
+                <p className="font-serif text-base text-absolute-black/70 mt-2">
+                  Less than 15 minutes of your billable rate.
+                </p>
               </form>
             )}
           </div>
           
           <div className="font-mono text-sm uppercase tracking-widest font-bold text-center mb-8">
-            🔒 30-Day Money-Back Guarantee.
-            <span className="block font-serif text-base capitalize mt-2 italic font-normal text-absolute-black/70">No questions asked.</span>
+            THE OUTCOME GUARANTEE.
+            <span className="block font-serif text-base capitalize mt-2 italic font-normal text-absolute-black/70">Complete Module 1 — the Domain Leverage Audit. If it does not surface a product opportunity worth at least 10x the $79, we refund you in full and keep your Private List access active.</span>
           </div>
 
           <div className="text-center font-serif text-lg py-8 border-y border-absolute-black/20 mb-12">

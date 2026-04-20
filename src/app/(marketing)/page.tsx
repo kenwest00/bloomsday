@@ -53,6 +53,76 @@ export default function Home() {
       q: "Do I have to do the tiers in order?",
       a: "No. Each tier is a complete program and can be entered independently. That said, students who begin with The Blueprint and ascend tend to move faster in the Builder and Accelerator because they have already done the foundational product thinking. If you already have a clear product concept, you can enter the Builder directly."
     },
+    {
+      category: "The Programs",
+      q: "How much time does each program require?",
+      a: "The Blueprint is designed to be completed in a focused weekend — approximately 8 to 10 hours across Saturday and Sunday. The Builder is a 10-week self-paced program; most students invest 4 to 6 hours per week. The Accelerator requires 5 to 8 hours per week across the six-week cohort, including the two-hour live weekly session."
+    },
+    {
+      category: "The Programs",
+      q: "Is there a community included?",
+      a: "Yes. Builder students receive access to the Bloomsday Builder Community, a Slack-based peer network of professionals building digital products across industries. Accelerator students receive access to a private cohort channel during the program and lifetime access to the Accelerator alumni network after it concludes."
+    },
+    {
+      category: "The Modern Software Stack",
+      q: "I am not technical at all. Can I still do this?",
+      a: "Yes. The modern software stack does not require any programming knowledge. You do not need to understand how software is built — you need to understand which tools do which jobs and how to connect them. Ken\"s instruction is designed for domain experts, not technologists. The methodology treats software as architecture: you are the architect, not the construction crew."
+    },
+    {
+      category: "The Modern Software Stack",
+      q: "What tools will I learn to use?",
+      a: "The Builder curriculum covers the core modern software stack for digital product creation and delivery: Notion or similar for content structuring, Gumroad or Lemon Squeezy for payments and delivery, Beehiiv or ConvertKit for email, Webflow for product pages, Zapier for automation, and Airtable for data management. You will not use all of them for every product — the curriculum teaches you to choose the right tool for your specific product type."
+    },
+    {
+      category: "The Modern Software Stack",
+      q: "Will I actually own what I build?",
+      a: "Yes. Everything you build in Bloomsday — your product, your storefront, your automations, your customer list — belongs to you. Bloomsday does not take a percentage of your revenue, does not host your product on a proprietary platform that can be shut down, and does not require any ongoing relationship with us to keep your product running."
+    },
+    {
+      category: "The Accelerator",
+      q: "What happens if I miss a live session?",
+      a: "All live sessions are recorded and made available to cohort members within 24 hours. We strongly encourage attendance at every session — the accountability and live feedback are the core value of the Accelerator format. But life happens, and recordings ensure you never fall behind."
+    },
+    {
+      category: "The Accelerator",
+      q: "What is the application process for the Accelerator?",
+      a: "Submit your application via the /accelerator page. We review applications within 48 hours and will ask you a small number of questions about your domain expertise and your product concept (or the area you are exploring). Not everyone who applies is accepted — the Accelerator works because every cohort member is genuinely ready to build. If you are not accepted for this cohort, we will give you specific guidance on what to complete before the next one."
+    },
+    {
+      category: "The Accelerator",
+      q: "Can I do the Accelerator if I have not done The Blueprint or The Builder?",
+      a: "Yes, with the caveat that Accelerator students who have not completed The Blueprint tend to spend the first week on work that Blueprint students completed before the cohort begins. We recommend completing The Blueprint ($79) before applying to the Accelerator — at minimum, you should have a clear idea of your domain expertise and a working concept for your product."
+    },
+    {
+      category: "The Accelerator",
+      q: "What if I don\"t make a sale during the cohort?",
+      a: "Our goal is for every Accelerator student to make at least one sale before the six weeks end. That said, sales are a function of your product, your network, and your execution — not a guarantee we can make. What we can guarantee is that you will leave the cohort with a live, launched product and the complete infrastructure to generate revenue. Most students make their first sale during Week 5 of the cohort."
+    },
+    {
+      category: "Guarantees & Refunds",
+      q: "Is there a refund policy?",
+      a: "The Blueprint and The Builder both come with a 30-day money-back guarantee. If you complete the curriculum and do not feel it delivered the value promised, contact us within 30 days of purchase and we will refund you in full — no questions asked. The Accelerator has a different policy given the live cohort format: full refunds are available up to 7 days before the cohort start date. After that, we offer a full credit toward a future cohort."
+    },
+    {
+      category: "Guarantees & Refunds",
+      q: "What if I buy The Blueprint and decide not to continue?",
+      a: "That is completely fine. The Blueprint is designed to stand alone — you will leave with a complete product blueprint and launch roadmap that you can execute on your own schedule, with or without continuing to The Builder. If you choose to upgrade to The Builder within 90 days of completing The Blueprint, we will credit the $79 toward your Builder enrollment."
+    },
+    {
+      category: "Results & Expectations",
+      q: "How long does it take to start making money?",
+      a: "It depends on which program you start with and how quickly you execute. Blueprint students who move directly into The Builder and follow the launch curriculum typically see their first sale within 10 to 14 weeks of starting. Accelerator students are structured to launch within six weeks and make their first sale during the cohort. There is no universal timeline — your results depend on your expertise, your network, and your execution."
+    },
+    {
+      category: "Results & Expectations",
+      q: "What types of products do Bloomsday students typically build?",
+      a: "Students have built self-paced courses, downloadable guides and playbooks, diagnostic tools and assessments, membership communities with curated content, template libraries, and hybrid products that combine multiple formats. The right format depends on your expertise and your buyer — the Blueprint and Builder both guide you through that decision systematically."
+    },
+    {
+      category: "Results & Expectations",
+      q: "Is this only for people who want to quit their jobs?",
+      a: "No. Many Bloomsday students build digital products while continuing full-time employment. A scalable digital product can function as a supplemental income stream, a credibility-building platform, or the foundation for an eventual transition — on your timeline, not anyone else\"s. The framework works in all three scenarios."
+    }
   ];
 
   return (
@@ -81,7 +151,7 @@ export default function Home() {
             className="font-serif text-xl md:text-3xl italic text-stark-white/80 max-w-4xl mx-auto mb-16 leading-relaxed"
           >
             You have spent a decade — maybe two — becoming one of the best in your field. 
-            Now learn the framework to stop selling your time and start selling your knowledge.
+            Bloomsday is the system for converting that judgment into an asset that earns without you in the room.
           </motion.p>
           
           <motion.div 
@@ -122,16 +192,25 @@ export default function Home() {
           </motion.div>
           <motion.div variants={fadeInUP} className="md:col-span-7 font-serif text-2xl md:text-3xl leading-relaxed">
             <p className="mb-8 font-bold font-sans text-xl uppercase tracking-widest text-signal-orange">
-              You are competent. You are compensated. You are completely capped.
+              THE CAPPED EXECUTIVE.
             </p>
             <p className="mb-8">
-              Every engagement starts from scratch. Every new client requires the same explanation you have given a hundred times before. Your income is linear because your delivery is manual — and you are the only variable.
+              Your title has stopped buying you leverage. Every promotion adds obligation, not optionality. You are senior enough to see the ceiling and junior enough to be inside it.
+            </p>
+            <p className="mb-8 font-bold font-sans text-xl uppercase tracking-widest text-signal-orange">
+              THE EXHAUSTED CONSULTANT.
             </p>
             <p className="mb-8">
-              You are not capped because you lack expertise. You are capped because your expertise has no delivery mechanism that works without you in the room.
+              You have given the same explanation one hundred times. Every new engagement starts from zero. Your calendar is the bottleneck, and your calendar is finite.
+            </p>
+            <p className="mb-8 font-bold font-sans text-xl uppercase tracking-widest text-signal-orange">
+              THE TECHNICAL OPERATOR.
+            </p>
+            <p className="mb-8">
+              Your expertise only has value inside someone else’s org chart. The day the badge stops working, the market forgets what you know. You have built no asset you can carry out the door.
             </p>
             <p className="font-bold underline decoration-signal-orange decoration-4 underline-offset-8">
-              Bloomsday is the framework for changing that.
+              You are not capped because you lack expertise. You are capped because your expertise has no delivery mechanism that works without you in the room.
             </p>
           </motion.div>
         </motion.div>
@@ -397,7 +476,7 @@ export default function Home() {
             
             <div className="font-serif text-2xl leading-relaxed italic text-white/90 mb-10 relative">
               <span className="absolute -left-8 -top-4 text-6xl text-white/20 font-sans">&quot;</span>
-              I spent more than two decades inside the world&apos;s largest organizations — building digital products, leading research, designing the systems that millions of people use every day. Along the way, I watched some of the most knowledgeable people I have ever met hit an invisible ceiling. Brilliant attorneys. Senior engineers. Healthcare executives. They could not scale. Not because they lacked talent, but because no one had ever shown them how to turn what they knew into something that worked without them. Bloomsday is what I built so they would never have to figure that out alone.
+              I spent more than two decades inside the world&apos;s largest organizations — building digital products, leading research, designing the systems that millions of people use every day. Along the way, I watched some of the most knowledgeable people I have met hit a ceiling they could not name. Attorneys billing at $800 an hour who could not take a vacation. Engineers whose institutional knowledge was worth millions and compensated in base salary. Healthcare executives whose expertise evaporated the day they changed employers. The ceiling was not talent. It was delivery mechanism. Bloomsday is what I built so the next generation would not have to figure that out alone.
             </div>
             <Link href="/about" className="font-mono text-sm tracking-widest uppercase border-b border-stark-white pb-1 hover:text-signal-orange hover:border-signal-orange transition-all inline-block">
               Read the Full Methodology &rarr;
