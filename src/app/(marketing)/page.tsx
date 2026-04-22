@@ -131,8 +131,13 @@ export default function Home() {
       {/* 1. HERO — ABOVE THE FOLD */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 z-0 opacity-60 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero-expert-v22.jpg')", backgroundPosition: "right center" }}
+          className="absolute inset-0 z-0 opacity-70 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: "url('/images/hero-expert-v22.jpg')",
+            backgroundPosition: "right center",
+            backgroundSize: "cover",
+            backgroundAttachment: "fixed"
+          }}
         />
         <div 
           className="absolute inset-0 z-1 bg-gradient-to-r from-absolute-black/80 via-absolute-black/40 to-transparent"
@@ -148,7 +153,7 @@ export default function Home() {
             YOUR EXPERTISE<br/>IS THE PRODUCT.
           </motion.h1>
           
-          <mot            <motion.p 
+          <motion.p 
               variants={fadeInUP}
               initial="hidden"
               animate="visible"
