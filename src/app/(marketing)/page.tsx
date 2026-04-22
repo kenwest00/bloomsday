@@ -19,6 +19,7 @@ const staggerContainer = {
   },
 };
 
+// Cache bust: force clean rebuild
 export default function Home() {
   // FAQ accordion state
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
