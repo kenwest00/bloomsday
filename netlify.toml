@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[cache]
+  [cache.cacheControl]
+    /images/* = "max-age=0, must-revalidate"
+    /*.js = "max-age=31536000, immutable"
+    /*.css = "max-age=31536000, immutable"
