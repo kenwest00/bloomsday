@@ -131,7 +131,7 @@ export default function Home() {
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 z-0 opacity-30 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero-expert-pro.jpg')", backgroundPosition: "right center" }}
+          style={{ backgroundImage: "url('/images/hero-expert-v22.jpg')", backgroundPosition: "right center" }}
         />
         <div 
           className="absolute inset-0 z-1 bg-gradient-to-r from-absolute-black/80 via-absolute-black/40 to-transparent"
