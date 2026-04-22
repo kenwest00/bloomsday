@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
@@ -130,14 +131,13 @@ export default function Home() {
     <>
       {/* 1. HERO — ABOVE THE FOLD */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 z-0 opacity-70 bg-cover bg-center bg-no-repeat"
-          style={{ 
-            backgroundImage: "url('https://files.manuscdn.com/user_upload_by_module/session_file/310419663032373885/IneEiccuPzuOCAys.jpg')",
-            backgroundPosition: "right center",
-            backgroundSize: "cover",
-            backgroundAttachment: "fixed"
-          }}
+        <Image
+          src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663032373885/IneEiccuPzuOCAys.jpg"
+          alt="Professional expert at desk"
+          fill
+          className="object-cover object-right opacity-70"
+          priority
+          unoptimized
         />
         <div 
           className="absolute inset-0 z-1 bg-gradient-to-r from-absolute-black/80 via-absolute-black/40 to-transparent"
