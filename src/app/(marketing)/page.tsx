@@ -130,8 +130,11 @@ export default function Home() {
       {/* 1. HERO — ABOVE THE FOLD */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 z-0 opacity-40 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/architecture.png')" }}
+          className="absolute inset-0 z-0 opacity-30 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero-expert.jpg')", backgroundPosition: "right center" }}
+        />
+        <div 
+          className="absolute inset-0 z-1 bg-gradient-to-r from-absolute-black/80 via-absolute-black/40 to-transparent"
         />
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center flex flex-col items-center pt-24">
