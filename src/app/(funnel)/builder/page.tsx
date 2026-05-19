@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import AuthorByline from "@/components/AuthorByline";
 import { useState } from "react";
+import WaitlistModal from "@/components/WaitlistModal";
 
 const fadeInUP = {
   hidden: { opacity: 0, y: 30 },
@@ -20,19 +21,17 @@ const staggerContainer = {
 };
 
 export default function Builder() {
-  const [checkoutSubmitted, setCheckoutSubmitted] = useState(false);
-  const [checkoutForm, setCheckoutForm] = useState({ name: '', email: '' });
-
-  const handleCheckoutSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setCheckoutSubmitted(true);
-  };
+  const [waitlistOpen, setWaitlistOpen] = useState(false);
 
   return (
     <div className="bg-absolute-black min-h-screen pb-32 font-sans text-stark-white">
+      <WaitlistModal isOpen={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
       {/* 3.1 HERO */}
       <section className="pt-32 pb-20 px-6 lg:px-12 text-center max-w-5xl mx-auto">
         <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
+          <motion.div variants={fadeInUP} className="font-mono text-[9px] text-[#C9A84C] uppercase tracking-widest mb-2 font-bold">
+            [ OPENS JUNE 2026 ]
+          </motion.div>
           <motion.div variants={fadeInUP} className="font-mono text-[#4A6FA5] uppercase tracking-widest text-sm mb-6 font-bold">
             TIER 2 — $797
           </motion.div>
@@ -51,15 +50,15 @@ export default function Builder() {
             The Product Builder is the comprehensive, self-paced masterclass that takes you from concept to a live, automated, revenue-generating digital product — using the same modern software stack that elite teams use to ship in weeks, not months.
           </motion.p>
           <motion.div variants={fadeInUP} className="flex flex-col items-center">
-            <Link href="#checkout" className="inline-block bg-[#4A6FA5] text-stark-white font-mono text-sm font-bold uppercase tracking-widest px-12 py-5 hover:bg-[#355380] transition-colors shadow-2xl mb-6">
-              ENROLL IN THE BUILDER — $797
-            </Link>
-            <div className="font-serif text-lg text-white/80">
-              Already have a blueprint? 
-              <Link href="#checkout" className="ml-2 font-mono text-sm uppercase tracking-widest text-[#4A6FA5] font-bold border-b border-[#4A6FA5] pb-0.5 hover:text-white hover:border-white transition-all">
-                START HERE &rarr;
-              </Link>
-            </div>
+            <button
+              onClick={() => setWaitlistOpen(true)}
+              className="inline-block border border-[#C9A84C] text-[#C9A84C] font-mono text-sm font-bold uppercase tracking-widest px-12 py-5 hover:bg-[#C9A84C] hover:text-absolute-black transition-colors shadow-2xl mb-6"
+            >
+              [ JOIN THE JUNE WAITLIST ]
+            </button>
+            <p className="font-serif text-base text-white/55 italic">
+              The Builder opens June 2026. Waitlist members get first access and founding member pricing.
+            </p>
           </motion.div>
         </motion.div>
       </section>
@@ -207,55 +206,26 @@ export default function Builder() {
         </div>
       </section>
 
-      {/* 3.7 CHECKOUT/CTA */}
-      <section id="checkout" className="py-32 px-6 lg:px-12 bg-off-black text-stark-white border-t border-white/10">
+      {/* 3.7 BOTTOM CTA — WAITLIST */}
+      <section className="py-32 px-6 lg:px-12 bg-off-black text-stark-white border-t border-white/10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUP} className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-16 leading-[0.9]">
+          <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-8 leading-[0.9]">
             YOUR KNOWLEDGE IS WORTH MORE THAN YOUR HOURLY RATE.
           </h2>
-          
-          <div className="bg-absolute-black p-8 md:p-12 shadow-2xl mt-12 mb-8 border border-white/20">
-            {checkoutSubmitted ? (
-              <div className="text-center py-10">
-                <Check className="mx-auto text-[#4A6FA5] mb-4" size={48} />
-                <h3 className="font-sans text-2xl font-bold uppercase tracking-tight mb-2">YOU&apos;RE ON THE LIST.</h3>
-                <p className="font-serif text-lg text-white/70">Our payment gateway is launching this week. We will email you the secure checkout link as soon as it goes live.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleCheckoutSubmit} className="flex flex-col gap-4">
-                <div className="font-sans font-bold text-center text-xl uppercase tracking-tighter mb-4 text-[#4A6FA5]">
-                  CHECKOUT INTEGRATION PENDING.<br/>RESERVE YOUR ACCESS NOW.
-                </div>
-                <input 
-                  required
-                  type="text" 
-                  placeholder="Full Name" 
-                  className="w-full border border-white/20 bg-stark-white text-absolute-black p-4 font-sans focus:outline-none focus:border-[#4A6FA5]"
-                  value={checkoutForm.name}
-                  onChange={(e) => setCheckoutForm({...checkoutForm, name: e.target.value})}
-                />
-                <input 
-                  required
-                  type="email" 
-                  placeholder="Email Address" 
-                  className="w-full border border-white/20 bg-stark-white text-absolute-black p-4 font-sans focus:outline-none focus:border-[#4A6FA5]"
-                  value={checkoutForm.email}
-                  onChange={(e) => setCheckoutForm({...checkoutForm, email: e.target.value})}
-                />
-                <button type="submit" className="bg-[#4A6FA5] text-stark-white w-full py-6 font-mono text-lg font-bold uppercase tracking-widest hover:bg-[#355380] transition-colors mt-2">
-                  ENROLL IN THE BUILDER — $797
-                </button>
-              </form>
-            )}
+          <p className="font-serif text-xl text-white/65 mb-12 max-w-2xl mx-auto">
+            The Builder opens June 2026. Join the waitlist for first access and founding member pricing.
+          </p>
+          <button
+            onClick={() => setWaitlistOpen(true)}
+            className="inline-block border border-[#C9A84C] text-[#C9A84C] font-mono text-sm font-bold uppercase tracking-widest px-12 py-5 hover:bg-[#C9A84C] hover:text-absolute-black transition-colors mb-6"
+          >
+            [ JOIN THE JUNE WAITLIST ]
+          </button>
+          <div className="font-mono text-xs uppercase tracking-widest text-white/40 mt-6">
+            No obligation. One email when enrollment opens.
           </div>
-          
-          <div className="font-mono text-sm uppercase tracking-widest text-[#4A6FA5] font-bold">
-            Pay once, access for life.
-            <span className="block font-serif text-base mt-2 normal-case font-normal text-stark-white/60">30-day money-back guarantee. No questions asked.</span>
-          </div>
-
           <div className="mt-16 text-stark-white/50 font-serif italic text-lg">
-            Not ready? 
+            Not ready for the Builder? 
             <Link href="/blueprint" className="ml-3 font-mono text-xs not-italic tracking-widest uppercase border-b border-stark-white/50 text-stark-white/80 pb-0.5 hover:text-white hover:border-white transition-opacity font-bold">
               [ Start with The Blueprint — $79 ]
             </Link>

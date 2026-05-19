@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import WaitlistModal from "@/components/WaitlistModal";
+import FoundingMemberModal from "@/components/FoundingMemberModal";
 
 // Animations
 const fadeInUP = {
@@ -23,6 +25,8 @@ const staggerContainer = {
 export default function Home() {
   // FAQ accordion state
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [waitlistOpen, setWaitlistOpen] = useState(false);
+  const [foundingOpen, setFoundingOpen] = useState(false);
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -128,6 +132,8 @@ export default function Home() {
 
   return (
     <>
+      <WaitlistModal isOpen={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
+      <FoundingMemberModal isOpen={foundingOpen} onClose={() => setFoundingOpen(false)} />
       {/* 1. HERO — ABOVE THE FOLD */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div 
@@ -300,6 +306,7 @@ export default function Home() {
               {/* Highlight bar */}
               <div className="absolute top-0 left-0 w-full h-1 bg-signal-orange"></div>
               <div>
+                <div className="font-mono text-[9px] text-[#C9A84C] mb-1 uppercase tracking-widest font-bold">[ OPENS JUNE 2026 ]</div>
                 <div className="font-mono text-xs text-signal-orange mb-6 uppercase tracking-widest">
                   TIER 2 — $797
                 </div>
@@ -318,18 +325,22 @@ export default function Home() {
                 </ul>
               </div>
               <div className="flex flex-col gap-3">
-                <Link href="/builder" className="block text-center bg-signal-orange text-stark-white font-mono text-sm font-bold uppercase py-4 transition-colors hover:bg-orange-600">
-                  BUILD YOUR PRODUCT — $797
-                </Link>
-                <Link href="/builder" className="block text-center border border-stark-white text-stark-white font-mono text-sm font-bold uppercase py-4 transition-colors hover:bg-stark-white hover:text-absolute-black">
-                  VIEW FULL CURRICULUM
-                </Link>
+                <button
+                  onClick={() => setWaitlistOpen(true)}
+                  className="block w-full text-center border border-[#C9A84C] text-[#C9A84C] font-mono text-sm font-bold uppercase py-4 transition-all hover:bg-[#C9A84C] hover:text-absolute-black"
+                >
+                  [ JOIN THE JUNE WAITLIST ]
+                </button>
+                <p className="font-serif text-[11px] italic text-white/45 text-center">
+                  Waitlist members get first access and founding member pricing.
+                </p>
               </div>
             </motion.div>
 
             {/* TIER 3 */}
             <motion.div variants={fadeInUP} className="border border-white/20 p-10 flex flex-col justify-between">
               <div>
+                <div className="font-mono text-[9px] text-[#B85C3A] mb-1 uppercase tracking-widest font-bold">[ FOUNDING COHORT — JUNE 2026 ]</div>
                 <div className="font-mono text-xs text-signal-orange mb-6 uppercase tracking-widest">
                   TIER 3 — $3,000
                 </div>
@@ -348,12 +359,15 @@ export default function Home() {
                 </ul>
               </div>
               <div className="flex flex-col gap-3">
-                <Link href="/accelerator" className="block text-center border-2 border-stark-white text-absolute-black bg-stark-white font-mono text-sm font-bold uppercase py-4 transition-colors hover:bg-transparent hover:text-stark-white">
-                  APPLY FOR THE ACCELERATOR
-                </Link>
-                <Link href="/accelerator" className="block text-center border border-stark-white text-stark-white font-mono text-sm font-bold uppercase py-4 transition-colors hover:bg-stark-white hover:text-absolute-black">
-                  SEE COHORT DETAILS
-                </Link>
+                <button
+                  onClick={() => setFoundingOpen(true)}
+                  className="block w-full text-center border border-[#B85C3A] text-[#B85C3A] font-mono text-sm font-bold uppercase py-4 transition-all hover:bg-[#B85C3A] hover:text-white"
+                >
+                  [ JOIN THE FOUNDING COHORT ]
+                </button>
+                <p className="font-serif text-[11px] italic text-white/45 text-center">
+                  Founding members receive direct access to Ken and founding pricing.
+                </p>
               </div>
             </motion.div>
 

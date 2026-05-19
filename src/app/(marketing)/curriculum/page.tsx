@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import WaitlistModal from "@/components/WaitlistModal";
+import FoundingMemberModal from "@/components/FoundingMemberModal";
 
 const fadeInUP = {
   hidden: { opacity: 0, y: 20 },
@@ -17,8 +20,13 @@ const staggerContainer = {
 };
 
 export default function Curriculum() {
+  const [waitlistOpen, setWaitlistOpen] = useState(false);
+  const [foundingOpen, setFoundingOpen] = useState(false);
+
   return (
     <div className="bg-absolute-black min-h-screen text-absolute-black font-sans pb-32">
+      <WaitlistModal isOpen={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
+      <FoundingMemberModal isOpen={foundingOpen} onClose={() => setFoundingOpen(false)} />
       {/* 1.1 PAGE HERO */}
       <section className="pt-40 pb-24 px-6 lg:px-12 text-center text-stark-white max-w-5xl mx-auto">
         <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
@@ -128,8 +136,8 @@ export default function Curriculum() {
               <tr className="bg-[#FFFFFF]">
                 <td className="p-6 border-r border-[#E8E8E8]"></td>
                 <td className="p-6 text-center border-r border-[#E8E8E8] font-bold text-[#C9A84C] text-[12px] uppercase tracking-widest">GET THE BLUEPRINT — $79</td>
-                <td className="p-6 text-center border-r border-[#E8E8E8] bg-[#FAFAF8] font-bold text-[#1A1A2D] text-[12px] uppercase tracking-widest">ENROLL IN THE BUILDER — $797</td>
-                <td className="p-6 text-center border-[#E8E8E8] font-bold text-[#B85C3A] text-[12px] uppercase tracking-widest">APPLY FOR THE ACCELERATOR</td>
+                <td className="p-6 text-center border-r border-[#E8E8E8] bg-[#FAFAF8] font-bold text-[#4A6FA5] text-[12px] uppercase tracking-widest">JOIN THE JUNE WAITLIST</td>
+                <td className="p-6 text-center border-[#E8E8E8] font-bold text-[#B85C3A] text-[12px] uppercase tracking-widest">JOIN THE FOUNDING COHORT</td>
               </tr>
             </tbody>
           </table>
@@ -178,9 +186,11 @@ export default function Curriculum() {
 
             {/* TIER 2 CARD */}
             <div className="group bg-[#FFFFFF] border border-[#E8E8E8] rounded-[2px] relative flex flex-col pt-[28px] pr-[28px] pb-[24px] pl-[32px] transition-all duration-300 hover:bg-[#FAFAF8]" onMouseEnter={(e) => e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.07)"} onMouseLeave={(e) => e.currentTarget.style.boxShadow = "0 0 0 rgba(0,0,0,0)"}>
-              <div className="absolute top-0 bottom-0 left-0 w-[4px] bg-[#4A6FA5]"></div>
+              {/* Dashed left border — signals coming soon */}
+              <div className="absolute top-0 bottom-0 left-0 w-[4px]" style={{ background: "repeating-linear-gradient(to bottom, #4A6FA5 0px, #4A6FA5 8px, transparent 8px, transparent 12px)" }}></div>
               
-              <div className="flex flex-col mb-6">
+              <div className="flex flex-col mb-4">
+                <div className="font-mono text-[9px] text-[#C9A84C] mb-1 font-bold uppercase tracking-widest">[ OPENS JUNE 2026 ]</div>
                 <div className="font-mono text-[#C9A84C] text-[11px] mb-1 font-bold uppercase tracking-widest">★ MOST POPULAR</div>
                 <div className="font-mono text-[11px] uppercase tracking-widest text-[#4A6FA5] font-bold">
                   [ TIER 2 — $797 ]
@@ -211,15 +221,26 @@ export default function Curriculum() {
                 </ul>
               </div>
 
-              <Link href="/builder" className="block w-full bg-[#4A6FA5] text-white font-sans font-bold uppercase tracking-widest text-center py-4 rounded-[2px] transition-opacity hover:opacity-90">
-                ENROLL IN THE BUILDER — $797
-              </Link>
+              <div>
+                <button
+                  onClick={() => setWaitlistOpen(true)}
+                  className="block w-full border border-[#4A6FA5] text-[#4A6FA5] font-sans font-bold uppercase tracking-widest text-center py-4 rounded-[2px] transition-all hover:bg-[#4A6FA5] hover:text-white mb-3"
+                >
+                  [ JOIN THE JUNE WAITLIST ]
+                </button>
+                <p className="font-serif text-[11px] italic text-[#999999] text-center">
+                  The Builder opens June 2026. Waitlist members receive 48-hour early access and founding member pricing.
+                </p>
+              </div>
             </div>
 
             {/* TIER 3 CARD */}
             <div className="group bg-[#FFFFFF] border border-[#E8E8E8] rounded-[2px] relative flex flex-col pt-[28px] pr-[28px] pb-[24px] pl-[32px] transition-all duration-300 hover:bg-[#FAFAF8]" onMouseEnter={(e) => e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.07)"} onMouseLeave={(e) => e.currentTarget.style.boxShadow = "0 0 0 rgba(0,0,0,0)"}>
               <div className="absolute top-0 bottom-0 left-0 w-[4px] bg-[#B85C3A]"></div>
               
+              <div className="font-mono text-[9px] uppercase tracking-widest text-[#B85C3A] font-bold mb-2">
+                [ FOUNDING COHORT — JUNE 2026 ]
+              </div>
               <div className="font-mono text-[11px] uppercase tracking-widest text-[#B85C3A] font-bold mb-6">
                 [ TIER 3 — $3,000 ]
               </div>
@@ -249,12 +270,15 @@ export default function Curriculum() {
               </div>
 
               <div>
-                <Link href="/accelerator" className="block w-full bg-[#B85C3A] text-white font-sans font-bold uppercase tracking-widest text-center py-4 rounded-[2px] transition-opacity hover:opacity-90 mb-4">
-                  APPLY FOR THE ACCELERATOR
-                </Link>
-                <div className="font-mono text-[10px] text-center uppercase tracking-widest text-[#1A1A2D]/60 whitespace-nowrap overflow-hidden text-clip">
-                  MAY 2026  &middot;  2 SESSIONS  &middot;  24 SEATS REMAINING
-                </div>
+                <button
+                  onClick={() => setFoundingOpen(true)}
+                  className="block w-full border border-[#B85C3A] text-[#B85C3A] font-sans font-bold uppercase tracking-widest text-center py-4 rounded-[2px] transition-all hover:bg-[#B85C3A] hover:text-white mb-3"
+                >
+                  [ JOIN THE FOUNDING COHORT ]
+                </button>
+                <p className="font-serif text-[11px] italic text-[#999999] text-center">
+                  Founding cohort enrollment opens June 2026. Founding members receive direct access to Ken during the build.
+                </p>
               </div>
             </div>
 

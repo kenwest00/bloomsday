@@ -373,12 +373,20 @@ export default function Accelerator() {
 
       {/* 7. BOTTOM CTA */}
       <section className="py-24 px-6 lg:px-12 text-center border-t border-absolute-black/20">
-        <h2 className="text-3xl font-bold uppercase tracking-tighter mb-12 text-stark-white">THIRTY SEATS. TWO SESSIONS. YOUR PRODUCT, LAUNCHED IN SIX WEEKS.</h2>
-        <Link href="#apply" className="inline-block bg-signal-orange text-stark-white font-mono text-sm font-bold uppercase tracking-widest px-12 py-5 hover:bg-orange-600 transition-colors shadow-2xl shadow-signal-orange/20 mb-6">
-          APPLY NOW — MAY 2026 COHORT
-        </Link>
-        <p className="font-mono text-xs uppercase tracking-widest text-white/40">
-          Questions before applying? Email cohort@bloomsday.co — we respond within 24 hours.
+        <h2 className="text-3xl font-bold uppercase tracking-tighter mb-6 text-stark-white">THIRTY SEATS. TWO SESSIONS. YOUR PRODUCT, LAUNCHED IN SIX WEEKS.</h2>
+        <p className="font-serif text-lg text-white/60 italic mb-10 max-w-xl mx-auto">
+          The May 2026 cohort is live. The June founding cohort is forming now.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Link href="#apply" className="inline-block bg-signal-orange text-stark-white font-mono text-sm font-bold uppercase tracking-widest px-10 py-5 hover:bg-orange-600 transition-colors shadow-2xl shadow-signal-orange/20">
+            APPLY NOW — MAY 2026 COHORT
+          </Link>
+          <Link href="/curriculum" className="inline-block border border-white/30 text-white/70 font-mono text-sm font-bold uppercase tracking-widest px-10 py-5 hover:border-white hover:text-white transition-colors">
+            VIEW ALL PROGRAMS
+          </Link>
+        </div>
+        <p className="font-mono text-xs uppercase tracking-widest text-white/40 mt-8">
+          Questions before applying? Email cohort@bloomsday.io — we respond within 24 hours.
         </p>
       </section>
     </div>
