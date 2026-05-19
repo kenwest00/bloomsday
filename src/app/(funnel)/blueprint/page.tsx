@@ -216,7 +216,7 @@ export default function Blueprint() {
           </div>
           <p className="font-serif text-base text-white/50 leading-relaxed italic">
             Results shown are from selected cohort participants. Not every professional who completes Bloomsday launches a revenue-generating product. Most who do report first revenue within 90 days of launch.
-          </div>
+          </p>
         </div>
       </section>
 
